@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.biller.entity.AccHolderInfo;
+import com.biller.entity.Item;
 import com.biller.entity.Product;
 import com.biller.jdbc.jdbcQueries;
 
@@ -74,5 +75,12 @@ public class BillerController {
 		System.out.println("obj:["+accHolderInfo.getName()+","+accHolderInfo.getMobile()+","+accHolderInfo.getAdhar()+","+accHolderInfo.getContactperson()+","+accHolderInfo.getAddress()+"]");
 		
 		return ResponseEntity.accepted().build();
+	}
+	@PostMapping("Items/add")
+	public ResponseEntity<?> saveItems(@RequestBody Item item){
+		
+		System.out.println(item.toString());
+		
+		return ResponseEntity.accepted().body(item);
 	}
 }
