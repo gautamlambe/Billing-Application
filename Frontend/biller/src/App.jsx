@@ -5,6 +5,9 @@ import './App.css'
 import ProductGrid from './component/ProductGrid'
 import billerLogo from './assets/biller-logo1.png';
 import Billsection from './component/billsection';
+import { Link } from 'react-router-dom';
+import adminLogo from './assets/admin.png';
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -14,6 +17,10 @@ function App() {
         <div className="text-white text-xl font-bold w-full justify-center flex items-center">
 
            <img src={billerLogo} alt="biller-logo" className="max-h-16 max-w-full object-contain shadow-lg  border-4 border-white rounded "  />
+          
+           <Link to="/admin" className="absolute right-2 bg- hover:text-blue-500" >
+           <img src={adminLogo} alt="admin" className="max-h-12 max-w-full object-contain shadow-lg  border-4 border-white rounded hover:border-6 border-black "  />
+           </Link>
 
 
          </div>

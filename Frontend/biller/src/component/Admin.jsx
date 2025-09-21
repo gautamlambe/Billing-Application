@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Admin =()=>{
     class AccHolderInfo{
@@ -58,8 +59,11 @@ const Admin =()=>{
 
     return(
         <div className="w-full h-screen bg-gray-300 text-center items-center flex flex-col border-2 border-black">
-            <div className="bg-blue-300 w-[200px] text-center item-center p-2  m-2  font-bold border-4 border-yellow-500">
+            <div className=" flex flex-row">
+           <div className="bg-blue-300 w-[200px] text-center item-center p-2  m-2  font-bold border-4 border-yellow-500 ">
             ADMIN SECTION
+            </div>
+            <Link to="/" className="item-center text-center absolute right-2  p-2  m-2  font-bold hover:text-blue-500">Home</Link>
             </div>
 
             <div className="w-full min-h-[40%] bg-white m-2 border-2 border-black content-center">
