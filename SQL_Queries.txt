@@ -1,0 +1,25 @@
+create table AccountHolders (
+id integer primary key,
+name varchar(20),
+outstanding float);
+
+insert into accountholders values(1,'kishor tamnar',2500);
+
+create table Items(
+id integer primary key,
+name varchar(20),
+expiry_date date,
+price float,
+Stock int,
+type varchar(10));
+
+INSERT INTO Items (id, name, expiry_date, price, Stock, type) VALUES (1, 'glycel', '2025-08-15', 120.50, 50, 'herbicide');
+INSERT INTO Items (id, name, expiry_date, price, Stock, type) VALUES (2, 'mira71', '2024-12-01', 95.00, 30, 'fertilizer');
+INSERT INTO Items (id, name, expiry_date, price, Stock, type) VALUES (3, 'karate', '2026-03-20', 150.75, 40, 'insecti');
+INSERT INTO Items (id, name, expiry_date, price, Stock, type) VALUES (4, 'biola', '2025-06-10', 80.00, 25, 'fungicide');
+INSERT INTO Items (id, name, expiry_date, price, Stock, type) VALUES (5, 'hoshi', '2024-11-30', 110.00, 60, 'herbicide');
+INSERT INTO Items (id, name, expiry_date, price, Stock, type) VALUES (6, 'profex', '2025-09-05', 130.25, 35, 'insecti');
+INSERT INTO Items (id, name, expiry_date, price, Stock, type) VALUES (7, 'profex-super', '2026-01-18', 175.00, 20, 'insecti');
+INSERT INTO Items (id, name, expiry_date, price, Stock, type) VALUES (8, 'safex', '2025-04-22', 90.00, 45, 'fungicide');
+INSERT INTO Items (id, name, expiry_date, price, Stock, type) VALUES (9, 'zenith', '2024-10-15', 105.50, 55, 'fertilizer');
+INSERT INTO Items (id, name, expiry_date, price, Stock, type) VALUES (10, 'maxpro', '2025-12-31', 160.00, 38, 'herbicide');
