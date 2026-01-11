@@ -1,11 +1,12 @@
 import { useState,useEffect } from "react";
 import axios from "axios";
 
-const AccountHolderInfo = () => {
+const AccountHolderInfo = ({Accountholder, setAccountholder}) => {
 
     const[accountholderinfo,setaccountholderinfo]=useState([]);
     const[query,setquery]=useState("");
-    const[Accountholder,setAccountholder]=useState({});
+   
+   
     
     useEffect(()=>{
         if(query===""){
@@ -13,7 +14,11 @@ const AccountHolderInfo = () => {
         return;
         }
         
-        axios.get('http://localhost:8080/accountsholder/name/'+query).then((Response)=>{
+        axios.get('http://localhost:8080/accountsholder/name/'+query,{
+             headers: {
+          "Authorization": "Basic " + btoa("gautam:root")
+        }
+        }).then((Response)=>{
             setaccountholderinfo(Response.data);
         });
     },[query])
@@ -24,6 +29,7 @@ const AccountHolderInfo = () => {
         setquery(e.target.value);
     }
     const onclicklist=(info)=>{
+        console.log("SetAccountHolder:",setAccountholder);
         setquery(info.name);
         setaccountholderinfo([]);
         setAccountholder(info);
@@ -54,7 +60,7 @@ const AccountHolderInfo = () => {
             <div className="w-[50%] ml-0 border-2 border-black flex flex-row justify-center items-center  p-2">
                 <label className="Font-bold">OutStanding:</label>
                 <div>
-                    {Accountholder.outstanding}
+                    {Accountholder?.outstanding}
                 </div>
             </div>
         </div>

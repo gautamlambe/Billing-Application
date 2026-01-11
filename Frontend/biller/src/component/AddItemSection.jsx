@@ -2,9 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 
-const AddItemSection = ({itemList,setitemList,addItem,setaddItem})=>{
+const AddItemSection = ({itemList,setitemList,addItem,setaddItem,query,setquery})=>{
 
-    const[query,setquery]=useState("");
+    
     const onchangeTextBox=(e)=>{
         console.log(e.target.value);
         setquery(e.target.value);

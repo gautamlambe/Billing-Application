@@ -1,5 +1,7 @@
-const QuantityFillingSection = ({ addItem, setaddItem,cartItems,setcartItems, neededQuantity, setneededQuantity}) => {
-   
+import { useRef } from "react";
+
+const QuantityFillingSection = ({ addItem, setaddItem,cartItems,setcartItems, neededQuantity, setneededQuantity, handleParentAdd}) => {
+   const textboxRef =useRef(0);
     class CartClass{
             constructor(id,name,price,expiry_date,quantity){
                 this.id=id;
@@ -17,6 +19,9 @@ const QuantityFillingSection = ({ addItem, setaddItem,cartItems,setcartItems, ne
     //const array=[...cartItems,addItem];
     const array=[...cartItems,cart];
     setcartItems(array);
+    setaddItem({});
+    handleParentAdd();
+    textboxRef.current.value="";
 
 
    }
@@ -30,7 +35,7 @@ const QuantityFillingSection = ({ addItem, setaddItem,cartItems,setcartItems, ne
 
         <div className="w-full bg-white mt-2 p-2  flex flex-row border-2 border-black ">
             <label className="m-2 p-1">Quantity:</label>
-            <input type="number" className="m-2 p-1 border-2 border-black rounded" onChange={(e)=>onchangeInput(e)} />
+            <input type="number" ref={textboxRef} className="m-2 p-1 border-2 border-black rounded" onChange={(e)=>onchangeInput(e)} />
             <button className="m-2 w-[30%] p-1 border-2 border-black rounded bg-green-300" onClick={()=>handleonClickOnAdd()}>Add</button>
         </div>
         </>

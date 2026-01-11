@@ -23,6 +23,7 @@ import com.biller.jdbc.jdbcQueries;
 public class BillerController {
 
 	
+	
 	@Autowired
 	private jdbcQueries jdbcQueries;
 	
@@ -69,14 +70,14 @@ public class BillerController {
 		System.out.println(query);
 		return ResponseEntity.ok(jdbcQueries.getSuggestionItemsList(query));
 	}
-	@PostMapping("accholderinfo/save")
+	@PostMapping("admin/accholderinfo/save")
 	public ResponseEntity<?> saveAccountHolderInfo(@RequestBody AccHolderInfo accHolderInfo){
 		
 		System.out.println("obj:["+accHolderInfo.getName()+","+accHolderInfo.getMobile()+","+accHolderInfo.getAdhar()+","+accHolderInfo.getContactperson()+","+accHolderInfo.getAddress()+"]");
 		
 		return ResponseEntity.accepted().build();
 	}
-	@PostMapping("Items/add")
+	@PostMapping("admin/Items/add")
 	public ResponseEntity<?> saveItems(@RequestBody Item item){
 		
 		System.out.println(item.toString());
